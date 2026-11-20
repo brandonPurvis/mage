@@ -40,6 +40,7 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
     private final List<UUID> selectedModes = new ArrayList<>(); // all selected modes (this + duplicate), use getSelectedModes all the time to keep modes order
     private final Map<UUID, Mode> selectedDuplicateModes = new LinkedHashMap<>(); // for 2x selects: additional selected modes
     private final Map<UUID, UUID> selectedDuplicateToOriginalModeRefs = new LinkedHashMap<>(); // for 2x selects: stores ref from duplicate to original mode
+    private UUID choosingPlayerId; // player who chose the selected modes (controller or opponent), example: dilemma
 
     private int minModes;
     private int maxModes;
@@ -78,6 +79,7 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
             selectedDuplicateModes.put(entry.getKey(), entry.getValue().copy());
         }
         selectedDuplicateToOriginalModeRefs.putAll(modes.selectedDuplicateToOriginalModeRefs);
+        this.choosingPlayerId = modes.choosingPlayerId;
 
         this.minModes = modes.minModes;
         this.maxModes = modes.maxModes;
@@ -306,6 +308,14 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
         return this.chooseController;
     }
 
+    /**
+     * Returns the player who chose the selected modes on the last choose call:
+     * the controller, or the opponent who chose them for "an opponent chooses" modes
+     */
+    public UUID getChoosingPlayerId() {
+        return this.choosingPlayerId;
+    }
+
     public void setActiveMode(Mode mode) {
         setActiveMode(mode.getId());
     }
@@ -345,6 +355,9 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
     }
 
     public boolean choose(Game game, Ability source) {
+        // the controller chooses the modes, unless an opponent is selected to choose them below
+        this.choosingPlayerId = source.getControllerId();
+
         // in multi-modal abilities it must keep already selected modes and targets
         // to make sure AI simulations will keep predefined setup (modes + targets)
         if (this.isPreselected()) {
@@ -436,6 +449,7 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
             if (player == null) {
                 return false;
             }
+            this.choosingPlayerId = playerId;
 
             // player chooses modes manually
             logger.debug("modes choose, before clear, currentMode = " + currentMode + " " + game);

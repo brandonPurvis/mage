@@ -381,6 +381,15 @@ public abstract class AbilityImpl implements Ability {
             return false;
         }
 
+        // 700.17
+        // A player faces a dilemma whenever they choose one or more modes for a spell or ability.
+        if (isModal() && !getModes().getSelectedModes().isEmpty()) {
+            game.fireEvent(GameEvent.getEvent(
+                    GameEvent.EventType.FACED_DILEMMA, this.getId(),
+                    this, getModes().getChoosingPlayerId()
+            ));
+        }
+
         // apply mode costs if they have them
         for (UUID modeId : this.getModes().getSelectedModes()) {
             Cost cost = this.getModes().get(modeId).getCost();

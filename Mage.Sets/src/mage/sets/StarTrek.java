@@ -169,6 +169,7 @@ public final class StarTrek extends ExpansionSet {
         cards.add(new SetCardInfo("Forest", 568, Rarity.LAND, mage.cards.basiclands.Forest.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Free Borg Revolutionaries", 19, Rarity.COMMON, mage.cards.f.FreeBorgRevolutionaries.class));
         cards.add(new SetCardInfo("Fugitive Listener", 107, Rarity.COMMON, mage.cards.f.FugitiveListener.class));
+        cards.add(new SetCardInfo("Gabriel Lorca, Mirror Menace", 108, Rarity.UNCOMMON, mage.cards.g.GabrielLorcaMirrorMenace.class));
         cards.add(new SetCardInfo("Gaseous Anomaly", 284, Rarity.UNCOMMON, mage.cards.g.GaseousAnomaly.class));
         cards.add(new SetCardInfo("General Chang, Cold Warrior", 109, Rarity.RARE, mage.cards.g.GeneralChangColdWarrior.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("General Chang, Cold Warrior", 415, Rarity.RARE, mage.cards.g.GeneralChangColdWarrior.class, NON_FULL_USE_VARIOUS));
@@ -246,6 +247,7 @@ public final class StarTrek extends ExpansionSet {
         cards.add(new SetCardInfo("Make It So", 71, Rarity.COMMON, mage.cards.m.MakeItSo.class));
         cards.add(new SetCardInfo("Malfunctioning Holodeck", 22, Rarity.COMMON, mage.cards.m.MalfunctioningHolodeck.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Malfunctioning Holodeck", 571, Rarity.COMMON, mage.cards.m.MalfunctioningHolodeck.class, NON_FULL_USE_VARIOUS));
+        cards.add(new SetCardInfo("Melkotian Adjudicator", 73, Rarity.COMMON, mage.cards.m.MelkotianAdjudicator.class));
         cards.add(new SetCardInfo("Moopsy", 207, Rarity.COMMON, mage.cards.m.Moopsy.class));
         cards.add(new SetCardInfo("Mountain", 310, Rarity.LAND, mage.cards.basiclands.Mountain.class, FULL_ART_BFZ_VARIOUS));
         cards.add(new SetCardInfo("Mountain", 315, Rarity.LAND, mage.cards.basiclands.Mountain.class, FULL_ART_BFZ_VARIOUS));
@@ -341,6 +343,8 @@ public final class StarTrek extends ExpansionSet {
         cards.add(new SetCardInfo("Sela, Tal Shiar Paradox", 379, Rarity.RARE, mage.cards.s.SelaTalShiarParadox.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Sela, Tal Shiar Paradox", 513, Rarity.RARE, mage.cards.s.SelaTalShiarParadox.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Set Phasers to . . .", 34, Rarity.COMMON, mage.cards.s.SetPhasersTo.class));
+        cards.add(new SetCardInfo("Seven of Nine", 252, Rarity.UNCOMMON, mage.cards.s.SevenOfNine.class, NON_FULL_USE_VARIOUS));
+        cards.add(new SetCardInfo("Seven of Nine", 343, Rarity.UNCOMMON, mage.cards.s.SevenOfNine.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Seven of Nine, Unassimilated", 1705, Rarity.MYTHIC, mage.cards.s.SevenOfNineUnassimilated.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Seven of Nine, Unassimilated", 373, Rarity.MYTHIC, mage.cards.s.SevenOfNineUnassimilated.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Seven of Nine, Unassimilated", 507, Rarity.MYTHIC, mage.cards.s.SevenOfNineUnassimilated.class, NON_FULL_USE_VARIOUS));

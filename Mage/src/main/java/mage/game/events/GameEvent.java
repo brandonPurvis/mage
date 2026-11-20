@@ -747,6 +747,12 @@ public class GameEvent implements Serializable {
          playerId   the room permanent's controller
          */
         ROOM_FULLY_UNLOCKED,
+        /* the player faced a dilemma (chose one or more modes for a modal spell or ability)
+         targetId   id of the spell ability or ability whose modes were chosen
+         sourceId   of the ability
+         playerId   player who chose the modes
+         */
+        FACED_DILEMMA,
         // custom events - must store some unique data to track
         CUSTOM_EVENT;
 
